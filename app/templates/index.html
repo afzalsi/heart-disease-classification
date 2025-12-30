@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Disease Prediction</title>
+</head>
+<body>
+    <h2>Heart Disease Prediction</h2>
+
+    <form method="post">
+        Age: <input type="number" name="Age" required><br><br>
+
+        Sex:
+        <select name="Sex">
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+        </select><br><br>
+
+        Chest Pain Type:
+        <select name="ChestPainType">
+            <option value="ATA">ATA</option>
+            <option value="NAP">NAP</option>
+            <option value="ASY">ASY</option>
+            <option value="TA">TA</option>
+        </select><br><br>
+
+        Resting BP: <input type="number" name="RestingBP"><br><br>
+        Cholesterol: <input type="number" name="Cholesterol"><br><br>
+
+        Fasting BS:
+        <select name="FastingBS">
+            <option value="0">0</option>
+            <option value="1">1</option>
+        </select><br><br>
+
+        Resting ECG:
+        <select name="RestingECG">
+            <option value="Normal">Normal</option>
+            <option value="ST">ST</option>
+            <option value="LVH">LVH</option>
+        </select><br><br>
+
+        Max HR: <input type="number" name="MaxHR"><br><br>
+
+        Exercise Angina:
+        <select name="ExerciseAngina">
+            <option value="Y">Yes</option>
+            <option value="N">No</option>
+        </select><br><br>
+
+        Oldpeak: <input type="number" step="0.1" name="Oldpeak"><br><br>
+
+        ST Slope:
+        <select name="ST_Slope">
+            <option value="Up">Up</option>
+            <option value="Flat">Flat</option>
+            <option value="Down">Down</option>
+        </select><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <h3>Result: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
